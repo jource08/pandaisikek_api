@@ -24,7 +24,8 @@ class Kategori extends REST_Controller{
 // untuk menambah kategori menaggunakan method post
   public function add_post(){
     $response = $this->M_kategori->add_kategori(
-        $this->post('nama')
+        $this->post('nama'),
+        $this->post('status')
       );
     $this->response($response);
   }

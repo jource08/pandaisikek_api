@@ -9,12 +9,13 @@ class M_kategori extends CI_Model{
     return $response;
   }
 // function untuk insert data ke tabel kategori
-  public function add_kategori($nama){
+  public function add_kategori($nama,$status){
     if(empty($nama)){
         return $this->empty_response();
       }else{
         $data = array(
-          "nama" => $nama
+          "nama" => $nama,
+          "status" => $status,
         );
     $insert = $this->db->insert("categories", $data);
     if($insert){
